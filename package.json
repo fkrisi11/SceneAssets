@@ -1,0 +1,21 @@
+{
+  "name": "com.tohruthedragon.sceneassets",
+  "displayName": "TohruTheDragon - SceneAssets",
+  "version": "1.0.0",
+  "description": "Assets for your Unity scene",
+  "url": "https://github.com/fkrisi11/SceneAssets",
+  "vpmDependencies": {
+    "com.vrchat.avatars": "^3.8.0"
+  },
+  "type": "tool",
+  "keywords": [
+    "TohruTheDragon",
+    "mirror",
+    "camera",
+    "post processing"
+  ],
+  "author": {
+    "name": "TohruTheDragon",
+    "e-mail": "mentafagyi@gmail.com"
+  }
+}
