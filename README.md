@@ -10,7 +10,13 @@ You can check how your avatar looks in the mirror, in case you have mirror speci
 This camera has post processing (and Anti-aliasing) set up<br><br>
 <b>Note: You still have to install the Post Processing package from the Unity Package Manager</b>
 <br>
+
+## How to use
+You can spawn these assets from the ``TohruTheDragon/Scene Assets`` menu<br>
+If you have something selected in your scene, then as the asset spawns, it will be 1 meter ahead of it, facing it
+<br>
 <br>
 <br>
 Download the latest release here: [Link](https://github.com/fkrisi11/SceneAssets/releases/latest)<br>
 Or get it via VCC: [Link](https://fkrisi11.github.io/VPM-Package-Listing/)
+
