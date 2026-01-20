@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class GuidPrefabSpawner
 {
-    public static GameObject SpawnPrefab(string guid, bool spawnRelativeToSelection, bool lookAtTarget, bool unpackPrefab)
+    public static GameObject SpawnPrefab(string guid, bool spawnRelativeToSelection = true, float distance = 1, bool lookAtTarget = true, bool invertLook = false, bool unpackPrefab = false)
     {
         if (string.IsNullOrWhiteSpace(guid))
         {
@@ -59,16 +59,27 @@ public static class GuidPrefabSpawner
             {
                 Vector3 targetPos = selected.position;
 
-                Vector3 spawnPos = targetPos + (selected.forward.normalized * 1f);
+                Vector3 spawnPos = targetPos + (selected.forward.normalized * distance);
 
                 go.transform.position = spawnPos;
 
                 if (lookAtTarget)
                 {
-                    Vector3 toTarget = targetPos - spawnPos;
-                    if (toTarget.sqrMagnitude > 0.000001f)
+                    if (!invertLook)
                     {
-                        go.transform.rotation = Quaternion.LookRotation(toTarget.normalized, Vector3.up);
+                        Vector3 toTarget = targetPos - spawnPos;
+                        if (toTarget.sqrMagnitude > 0.000001f)
+                        {
+                            go.transform.rotation = Quaternion.LookRotation(toTarget.normalized, Vector3.up);
+                        }
+                    }
+                    else
+                    {
+                        Vector3 awayFromTarget = spawnPos - targetPos;
+                        if (awayFromTarget.sqrMagnitude > 0.000001f)
+                        {
+                            go.transform.rotation = Quaternion.LookRotation(awayFromTarget.normalized, Vector3.up);
+                        }
                     }
                 }
             }
